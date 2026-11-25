@@ -1,0 +1,56 @@
+egg:
+  name: "<dark_purple><bold>🐉 DRAGON EGG</bold></dark_purple>"
+  enchantment-glint: true
+  # Prevents accidentally placing the Dragon Egg block during PvP (End Portal egg still spawns normally after killing the Ender Dragon)
+  prevent-place: true
+  # Protects dropped Dragon Egg from fire, lava, cactus, and explosions
+  indestructible-drop: true
+  broadcast-on-wielder-change: true
+  show-bossbar-while-held: true
+  # If false, Dragon's Throw charges while the egg is anywhere in the wielder's inventory
+  charge-only-when-held: false
+  lore:
+    - "<gray>Crouch + Aim + Double Left-Click: <light_purple>Dragon's Throw</light_purple></gray>"
+    - "<gray>Crouch + Look Down + Double Right-Click: <dark_purple>Dragon's Breath</dark_purple></gray>"
+    - "<dark_gray>Mythic Artifact | Obtained from the End</dark_gray>"
+
+dragons-throw:
+  # 1% every 2 seconds = 100% in 200 seconds
+  charge-interval-seconds: 2
+  charge-per-interval: 1
+  max-charge: 100
+  min-charge-to-fire: 1
+  # At 100% charge, launches opponent 200 blocks straight up
+  max-launch-height-blocks: 200.0
+  # Aiming range in blocks
+  target-range-blocks: 24.0
+  double-click-window-ms: 450
+  target-creative: false
+  # Set to true temporarily if you want to solo-test Dragon's Throw on mobs like zombies
+  target-mobs: false
+
+dragons-breath:
+  # 8x8 area -> half-width 4.0 blocks in X and Z around the wielder
+  area-half-width: 4.0
+  duration-seconds: 10
+  cooldown-seconds: 60
+  damage-interval-ticks: 10
+  damage-per-pulse: 3.0
+  min-look-down-pitch: 45.0
+  double-click-window-ms: 450
+  target-creative: false
+  # Set to true temporarily if you want to solo-test Dragon's Breath on mobs
+  target-mobs: false
+
+messages:
+  prefix: "<dark_purple>[Dragon Egg]</dark_purple> "
+  no-permission: "<red>You don't have permission to do that.</red>"
+  wielder-changed-broadcast: "<gold>Now the <dark_purple><bold>🐉 DRAGON EGG</bold></dark_purple> <gold>is wielded by <white>{player}</white>!</gold>"
+  throw-no-charge: "<red>Dragon's Throw needs at least <white>{min}%</white> charge!</red>"
+  throw-no-target: "<gray>Aim directly at an opponent to use Dragon's Throw.</gray>"
+  throw-launched-caster: "<light_purple>Dragon's Throw!</light_purple> <gray>Launched <white>{target}</white> <white>{height} blocks</white> up (<white>{charge}%</white> charge)!</gray>"
+  throw-launched-victim: "<dark_purple><bold>🐉 DRAGON'S THROW!</bold></dark_purple> <red>{caster} launched you <white>{height} blocks</white> into the sky!</red>"
+  breath-on-cooldown: "<red>Dragon's Breath is on cooldown: <white>{time}s</white> remaining.</red>"
+  breath-activated: "<dark_purple>Dragon's Breath unleashed!</dark_purple> <gray>8x8 area active for <white>{duration}s</white> (You are immune).</gray>"
+  place-blocked: "<gray>The Mythic Dragon Egg cannot be placed down.</gray>"
+  reloaded: "<green>DragonEgg configuration reloaded.</green>"

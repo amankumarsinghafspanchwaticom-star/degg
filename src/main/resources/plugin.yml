@@ -1,0 +1,45 @@
+name: DragonEgg
+version: 1.0.0
+main: com.dragonegg.DragonEggPlugin
+api-version: '1.21.11'
+description: Mythic Dragon Egg obtained from the End Portal with Dragon's Throw (charged vertical launch up to 200 blocks), Dragon's Breath (8x8 cloud), and global wielder announcements.
+
+commands:
+  dragonegg:
+    description: Admin commands for the Mythic Dragon Egg
+    aliases: [degg, de]
+    usage: /dragonegg <give|charge|reset|status|reload> [args]
+    permission: dragonegg.admin
+
+permissions:
+  dragonegg.admin:
+    description: Grants access to all Dragon Egg admin commands
+    default: op
+    children:
+      dragonegg.admin.give: true
+      dragonegg.admin.charge: true
+      dragonegg.admin.reset: true
+      dragonegg.admin.status: true
+      dragonegg.admin.reload: true
+  dragonegg.admin.give:
+    default: op
+  dragonegg.admin.charge:
+    default: op
+  dragonegg.admin.reset:
+    default: op
+  dragonegg.admin.status:
+    default: op
+  dragonegg.admin.reload:
+    default: op
+  dragonegg.use.throw:
+    description: Allows using Dragon's Throw
+    default: true
+  dragonegg.use.breath:
+    description: Allows using Dragon's Breath
+    default: true
+  dragonegg.cooldown.bypass:
+    description: Bypasses Dragon's Breath cooldown
+    default: false
+  dragonegg.exempt:
+    description: Exempts player from being targeted by Dragon Egg abilities
+    default: false
